@@ -1,13 +1,20 @@
 package facade;
-import request.CreateAdRequest;
-import request.EditAdRequest;
-import request.FindAdRequest;
-import request.ToggleAdRequest;
+import request.*;
 import service.AdvertisementService;
-import java.util.Date;
+import shared.AdCategoryEnum;
+import shared.AppModesEnum;
+import shared.Price;
+
+import java.time.Instant;
 
 public class ApplicationFacade {
-    private String currentMode = "0";
+    private AdvertisementService adService;
+//    private AppModesEnum currentMode = AppModesEnum.IDLE;
+    private AppModesEnum currentMode = AppModesEnum.UNKNOWN;
+
+    public ApplicationFacade(AdvertisementService adService){
+        this.adService = adService;
+    }
 
     public void showMainMenu(){
         IO.println("Выберите тип операции:");
@@ -15,16 +22,17 @@ public class ApplicationFacade {
         IO.println("Редактировать объявление - 2");
         IO.println("Изменить статус объявления - 3");
         IO.println("Поиск объявления - 4");
-        IO.println("Завершить работу - exit");
+        IO.println("Посмотреть список объявлений - 5");
+        IO.println("Завершить работу - ex");
         IO.println();
     }
 
     public void createAdvertisement(){
         IO.println("Создание объявления...");
-        CreateAdRequest newAd = new CreateAdRequest("", "", "", "", 0, new Date());
-        AdvertisementService adService = new AdvertisementService();
-        adService.createAdvertisement(newAd);
-        currentMode = currentMode.substring(0, currentMode.length() - 1);
+        CreateAdRequest newAd = new CreateAdRequest("", AdCategoryEnum.CLOTHES, "", "", new Price(10.0, null), Instant.now());
+//        AdvertisementService adService = new AdvertisementService();
+        this.adService.createAdvertisement(newAd);
+//        currentMode = currentMode.substring(0, currentMode.length() - 1);
         IO.println("Объявление создано!");
         IO.println();
     }
@@ -32,9 +40,9 @@ public class ApplicationFacade {
     public void editAdvertisement(Integer id){
         IO.println("Редактирование объявления...");
         EditAdRequest editedAd = new EditAdRequest();
-        AdvertisementService adService = new AdvertisementService();
-        adService.editAdvertisement(editedAd);
-        currentMode = currentMode.substring(0, currentMode.length() - 1);
+//        AdvertisementService adService = new AdvertisementService();
+        this.adService.editAdvertisement(editedAd);
+//        currentMode = currentMode.substring(0, currentMode.length() - 1);
         IO.println("Объявление отредактировано!");
         IO.println();
     }
@@ -42,9 +50,9 @@ public class ApplicationFacade {
     public void toggleAdvertisement(){
         IO.println("Изменение статуса объявления...");
         ToggleAdRequest toggledAd = new ToggleAdRequest();
-        AdvertisementService adService = new AdvertisementService();
-        adService.toggleAdvertisement(toggledAd);
-        currentMode = currentMode.substring(0, currentMode.length() - 1);
+//        AdvertisementService adService = new AdvertisementService();
+        this.adService.toggleAdvertisement(toggledAd);
+//        currentMode = currentMode.substring(0, currentMode.length() - 1);
         IO.println("Статус объявления изменён!");
         IO.println();
     }
@@ -52,10 +60,20 @@ public class ApplicationFacade {
     public void findAdvertisement(){
         IO.println("Поиск объявления...");
         FindAdRequest findAd = new FindAdRequest();
-        AdvertisementService adService = new AdvertisementService();
-        adService.findAdvertisement(findAd);
-        currentMode = currentMode.substring(0, currentMode.length() - 1);
+//        AdvertisementService adService = new AdvertisementService();
+        this.adService.findAdvertisement(findAd);
+//        currentMode = currentMode.substring(0, currentMode.length() - 1);
         IO.println("Объявление найдено!");
+        IO.println();
+    }
+
+    public void outputAdvertisementsList(){
+        IO.println("Вывод списка объявлений...");
+        OutputAdsListRequest outputAds = new OutputAdsListRequest();
+//        AdvertisementService adService = new AdvertisementService();
+        this.adService.outputAdvertisements(outputAds);
+//        currentMode = currentMode.substring(0, currentMode.length() - 1);
+        IO.println("Объявления выведены!");
         IO.println();
     }
 
@@ -64,21 +82,24 @@ public class ApplicationFacade {
 
         while(true){
             IO.print("Введите число: ");
-            currentMode = IO.readln();
-            if(currentMode.equals("ex")) break;
+            currentMode = AppModesEnum.fromString(IO.readln());
+            if(currentMode == AppModesEnum.EXIT) break;
 
             switch (currentMode){
-                case "1":
+                case CREATE:
                     createAdvertisement();
                     break;
-                case "2":
+                case EDIT:
                     editAdvertisement(1);
                     break;
-                case "3":
+                case TOGGLE:
                     toggleAdvertisement();
                     break;
-                case "4":
+                case SEARCH:
                     findAdvertisement();
+                    break;
+                case LIST_OUTPUT:
+                    outputAdvertisementsList();
                     break;
                 default:
                     IO.println("Неизвестная команда!");

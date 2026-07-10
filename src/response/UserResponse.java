@@ -1,10 +1,10 @@
-package request;
+package response;
 
-public class CreateUserRequest {
+public class UserResponse {
     private String login;
     private String name;
 
-    public CreateUserRequest(String login, String name){
+    public UserResponse(String login, String name){
         this.login = login;
         this.name = name;
     }

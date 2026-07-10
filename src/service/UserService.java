@@ -1,17 +1,19 @@
 package service;
 import entity.User;
-import repository.UserRepository;
+import response.UserResponse;
+import shared.UserRoleEnum;
+import shared.UserStateEnum;
 
 public class UserService {
-    public User authUser(){
-        return new User(1, "", "", false, false);
+    public UserResponse authUser(){
+        return new UserResponse("", "");
     }
 
-    public User regUser(){
-        return new User(1, "", "", false, false);
+    public UserResponse regUser(){
+        return new UserResponse("", "");
     }
 
-    public User createUser(){
-        return new User(1, "", "", false, false);
+    public UserResponse createUser(){
+        return new UserResponse("", "");
     }
 }

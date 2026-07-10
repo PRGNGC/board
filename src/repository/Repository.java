@@ -1,6 +1,8 @@
 package repository;
+import entity.User;
+import java.util.Optional;
 
 public interface Repository<T, ID> {
     public void save(T entity);
-    public int findById(ID id);
+    public Optional<User> findById(ID id);
 }

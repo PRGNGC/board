@@ -1,27 +1,30 @@
 package service;
-import entity.Advertisement;
-import repository.AdvertisementRepository;
-import request.CreateAdRequest;
-import request.EditAdRequest;
-import request.FindAdRequest;
-import request.ToggleAdRequest;
+import request.*;
+import response.AdResponse;
+import shared.AdCategoryEnum;
+import shared.Price;
 
-import java.util.Date;
+import java.time.Instant;
 
 public class AdvertisementService {
-    public Advertisement createAdvertisement(CreateAdRequest ad){
-        return new Advertisement(1, "", "", "", "", 0, new Date(), false, "");
+    public AdResponse createAdvertisement(CreateAdRequest ad) {
+        return new AdResponse("", AdCategoryEnum.CLOTHES, "", "", new Price(10.0, null), Instant.now());
     }
 
-    public Advertisement editAdvertisement(EditAdRequest ad){
-        return new Advertisement(1, "", "", "", "", 0, new Date(), false, "");
+    public AdResponse editAdvertisement(EditAdRequest ad) {
+        return new AdResponse("", AdCategoryEnum.CLOTHES, "", "", new Price(10.0, null), Instant.now());
     }
 
-    public Advertisement toggleAdvertisement(ToggleAdRequest ad){
-        return new Advertisement(1, "", "", "", "", 0, new Date(), false, "");
+    public AdResponse toggleAdvertisement(ToggleAdRequest ad) {
+        return new AdResponse("", AdCategoryEnum.CLOTHES, "", "", new Price(10.0, null), Instant.now());
     }
 
-    public Advertisement findAdvertisement(FindAdRequest ad){
-        return new Advertisement(1, "", "", "", "", 0, new Date(), false, "");
+    public AdResponse findAdvertisement(FindAdRequest ad) {
+        return new AdResponse("", AdCategoryEnum.CLOTHES, "", "", new Price(10.0, null), Instant.now());
+    }
+
+    public AdResponse[] outputAdvertisements(OutputAdsListRequest ad) {
+        AdResponse[] ads = new AdResponse[]{new AdResponse("", AdCategoryEnum.CLOTHES, "", "", new Price(10.0, null), Instant.now())};
+        return ads;
     }
 }
