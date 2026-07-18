@@ -1,10 +1,10 @@
 package shared;
 
 public enum AdCategoryEnum {
-    CLOTHES("Одежда"),
-    TECHNICS("Техника"),
-    BOOKS("Книги"),
-    UNKNOWN("Другое");
+    CLOTHES("пїЅпїЅпїЅпїЅпїЅпїЅ"),
+    TECHNICS("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ"),
+    BOOKS("пїЅпїЅпїЅпїЅпїЅ"),
+    UNKNOWN("пїЅпїЅпїЅпїЅпїЅпїЅ");
 
     private final String value;
 
