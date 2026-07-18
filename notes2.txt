@@ -1,0 +1,6 @@
+id:3a688f43-385f-4555-b8af-974efb4b0cf7; name:art; login:123; role:Пользователь; state:Активный; 
+id:3a688f43-385f-4555-a8af-974efb4b0cf7; name:ken; login:345; role:Пользователь; state:Активный; 
+id:3a688f43-385f-4551-a8af-974efb4b0cf7; name:admin; login:admin; role:Админ; state:Активный; 
+id:e3446884-fa2a-4b0e-8b50-10758ec58664; name:new1; login:new2; role:Пользователь; state:Не активный; 
+id:a84ae9ac-b2d3-4514-8c07-d224a779751b; name:new2; login:new2; role:Админ; state:Активный; 
+id:719c1e91-b8eb-484a-a6b4-5893e60cfd38; name:новый пользователь; login:новый логин; role:Пользователь; state:Активный; 
