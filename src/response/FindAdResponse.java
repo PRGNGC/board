@@ -1,23 +1,29 @@
-package request;
+package response;
 
 import shared.AdCategoryEnum;
+import shared.AdStateEnum;
 import shared.Price;
+import shared.UserRoleEnum;
 import java.util.UUID;
 
-public class CreateAdRequest {
-    private UUID authorId;
+public class FindAdResponse {
+    private UUID id;
     private String title;
     private String description;
-    private Price price;
     private AdCategoryEnum category;
+    private Price price;
+    private AdStateEnum state;
+    private UserRoleEnum lastChangedBy;
 
-    public CreateAdRequest() {}
+    public FindAdResponse(){}
 
-    public UUID getAuthorId(){
-        return this.authorId;
+    public UUID getId(){
+        return this.id;
     }
 
-    public void setAuthorId(UUID authorId){ this.authorId = authorId; }
+    public void setId(UUID id){
+        this.id = id;
+    }
 
     public AdCategoryEnum getCategory(){
         return this.category;
@@ -50,4 +56,18 @@ public class CreateAdRequest {
     public void setPrice(Price price){
         this.price = price;
     }
+
+    public AdStateEnum getState(){
+        return this.state;
+    }
+
+    public void setState(AdStateEnum state){
+        this.state = state;
+    }
+
+    public UserRoleEnum getLastChanger(){
+        return this.lastChangedBy;
+    }
+
+    public void setLastChanger(UserRoleEnum lastChangedBy){ this.lastChangedBy = lastChangedBy; }
 }

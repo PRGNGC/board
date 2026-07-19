@@ -1,45 +1,38 @@
 package entity;
+
 import shared.AdCategoryEnum;
 import shared.AdStateEnum;
 import shared.Price;
-
+import shared.UserRoleEnum;
 import java.time.Instant;
+import java.util.UUID;
 
 public class Advertisement implements Entity{
-    private int id;
-    private String authorId;
+    private UUID id;
+    private UUID authorId;
     private AdCategoryEnum category;
     private String title;
     private String description;
     private Price price;
     private Instant createdAt;
     private AdStateEnum state;
-    private String lastChangedBy;
+    private UserRoleEnum lastChangedBy;
     private AdStateEnum lastStateChangedBy;
 
-    public Advertisement(int id, String authorId, AdCategoryEnum category, String title, String description, Price price, Instant createdAt, AdStateEnum state, String lastChangedBy) {
-        this.id = id;
-        this.authorId = authorId;
-        this.category = category;
-        this.title = title;
-        this.description = description;
-        this.price = price;
-        this.createdAt = createdAt;
-        this.state = state;
-        this.lastChangedBy = lastChangedBy;
-        this.lastStateChangedBy = null;
-    }
+    public Advertisement() {}
 
     @Override
-    public int getId() {
-        return this.id;
+    public UUID getId() { return this.id; }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
-    public String getAuthorId(){
+    public UUID getAuthorId(){
         return this.authorId;
     }
 
-    public void setAuthorId(String authorId){
+    public void setAuthorId(UUID authorId){
         this.authorId = authorId;
     }
 
@@ -91,11 +84,11 @@ public class Advertisement implements Entity{
         this.state = state;
     }
 
-    public String getLastChanger(){
+    public UserRoleEnum getLastChanger(){
         return this.lastChangedBy;
     }
 
-    public void setLastChanger(String lastChangedBy){
+    public void setLastChanger(UserRoleEnum lastChangedBy){
         this.lastChangedBy = lastChangedBy;
     }
 

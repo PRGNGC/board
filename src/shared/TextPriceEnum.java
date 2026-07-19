@@ -1,9 +1,8 @@
 package shared;
 
-public enum UserRoleEnum {
-    ADMIN("Админ"),
-    USER("Пользователь"),
-    NULL("null");
+public enum TextPriceEnum {
+    FREE("Бесплатно"),
+    DISCUSS("Договорная");
 
     private final String value;
 
@@ -11,17 +10,17 @@ public enum UserRoleEnum {
         return this.value;
     }
 
-    UserRoleEnum(String value) {
+    TextPriceEnum(String value) {
         this.value = value;
     }
 
-    public static UserRoleEnum fromString(String value) {
-        for (UserRoleEnum mode : values()) {
+    public static TextPriceEnum fromString(String value) {
+        for (TextPriceEnum mode : values()) {
             if (mode.value.equalsIgnoreCase(value)) {
                 return mode;
             }
         }
 
-        return NULL;
+        return DISCUSS;
     }
 }

@@ -1,0 +1,1 @@
+id:aa178d79-452d-4c4e-b374-0324eefd2868; authorId:aad15058-2aff-46d3-9955-309d4118d78c; category:Другое; title:1; description:1; price:1.0; createdAt:2026-07-19T09:44:46.478230200Z; state:Активный; lastChangedBy:null; lastStateChangedBy:null; 

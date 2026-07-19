@@ -1,7 +1,5 @@
 package request;
 
 public class OutputAdsListRequest {
-    public OutputAdsListRequest(){
-
-    }
+    public OutputAdsListRequest(){}
 }

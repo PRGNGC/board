@@ -2,10 +2,10 @@ package shared;
 
 public class Price {
     private final Double numericValue;
-    private final String textValue;
+    private final TextPriceEnum textValue;
 
     // Приватный конструктор, чтобы контролировать создание
-    public Price(Double numericValue, String textValue) {
+    public Price(Double numericValue, TextPriceEnum textValue) {
         this.numericValue = numericValue;
         this.textValue = textValue;
     }
@@ -15,7 +15,7 @@ public class Price {
         return new Price(value, null);
     }
 
-    public static Price ofText(String text) {
+    public static Price ofText(TextPriceEnum text) {
         return new Price(null, text);
     }
 
@@ -29,11 +29,10 @@ public class Price {
     }
 
     public Double getNumericValue() {
-        if (!isNumeric()) throw new IllegalStateException("Цена не является числом");
         return numericValue;
     }
 
-    public String getDisplayValue() {
-        return isNumeric() ? numericValue.toString() : textValue;
+    public TextPriceEnum getStringValue() {
+        return textValue;
     }
 }

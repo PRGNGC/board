@@ -2,22 +2,14 @@ package request;
 
 import shared.AdCategoryEnum;
 import shared.Price;
-import java.util.UUID;
 
-public class CreateAdRequest {
-    private UUID authorId;
+public class SearchAdRequest {
+    private AdCategoryEnum category;
     private String title;
     private String description;
     private Price price;
-    private AdCategoryEnum category;
 
-    public CreateAdRequest() {}
-
-    public UUID getAuthorId(){
-        return this.authorId;
-    }
-
-    public void setAuthorId(UUID authorId){ this.authorId = authorId; }
+    public SearchAdRequest() {}
 
     public AdCategoryEnum getCategory(){
         return this.category;
@@ -39,9 +31,7 @@ public class CreateAdRequest {
         return this.description;
     }
 
-    public void setDescription(String description){
-        this.description = description;
-    }
+    public void setDescription(String description){ this.description = description; }
 
     public Price getPrice(){
         return this.price;

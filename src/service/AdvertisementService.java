@@ -1,30 +1,28 @@
 package service;
-import request.*;
-import response.AdResponse;
-import shared.AdCategoryEnum;
-import shared.Price;
 
-import java.time.Instant;
+import repository.AdvertisementRepository;
+import request.*;
+import response.*;
+import java.util.Optional;
 
 public class AdvertisementService {
-    public AdResponse createAdvertisement(CreateAdRequest ad) {
-        return new AdResponse("", AdCategoryEnum.CLOTHES, "", "", new Price(10.0, null), Instant.now());
+    private final AdvertisementRepository adRep;
+
+    public AdvertisementService(){
+        this.adRep = new AdvertisementRepository();
     }
 
-    public AdResponse editAdvertisement(EditAdRequest ad) {
-        return new AdResponse("", AdCategoryEnum.CLOTHES, "", "", new Price(10.0, null), Instant.now());
+    public Optional<CreateAdResponse> createAdvertisement(CreateAdRequest ad) { return adRep.createAd(ad); }
+
+    public Optional<EditAdResponse> editAdvertisement(EditAdRequest ad) { return adRep.editAd(ad); }
+
+    public Optional<ToggleAdResponse> toggleAdvertisement(ToggleAdRequest ad) {
+        return adRep.toggleAd(ad);
     }
 
-    public AdResponse toggleAdvertisement(ToggleAdRequest ad) {
-        return new AdResponse("", AdCategoryEnum.CLOTHES, "", "", new Price(10.0, null), Instant.now());
-    }
+    public Optional<FindAdResponse> findAdvertisement(FindAdRequest ad) { return adRep.findAd(ad); }
 
-    public AdResponse findAdvertisement(FindAdRequest ad) {
-        return new AdResponse("", AdCategoryEnum.CLOTHES, "", "", new Price(10.0, null), Instant.now());
-    }
+    public Optional<SearchAdResponse> searchAdvertisement(SearchAdRequest ad) { return adRep.searchAd(ad); }
 
-    public AdResponse[] outputAdvertisements(OutputAdsListRequest ad) {
-        AdResponse[] ads = new AdResponse[]{new AdResponse("", AdCategoryEnum.CLOTHES, "", "", new Price(10.0, null), Instant.now())};
-        return ads;
-    }
+    public Optional<OutputAdResponse> outputAdvertisements(OutputAdsListRequest ad) { return adRep.outputAds(ad); }
 }

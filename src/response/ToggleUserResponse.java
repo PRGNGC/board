@@ -1,20 +1,19 @@
-package entity;
+package response;
 
 import shared.UserRoleEnum;
 import shared.UserStateEnum;
 import java.util.UUID;
 
-public class User implements Entity{
+public class ToggleUserResponse {
     private UUID id;
     private String login;
     private String name;
     private UserRoleEnum role;
     private UserStateEnum state;
 
-    public User() {}
+    public ToggleUserResponse(){}
 
-    @Override
-    public UUID getId() {
+    public UUID getId(){
         return this.id;
     }
 
@@ -42,15 +41,11 @@ public class User implements Entity{
         return this.role;
     }
 
-    public void setRole(UserRoleEnum role){
-        this.role = role;
-    }
+    public void setRole(UserRoleEnum role){ this.role = role; }
 
     public UserStateEnum getState(){
         return this.state;
     }
 
-    public void setState(UserStateEnum state){
-        this.state = state;
-    }
+    public void setState(UserStateEnum state){ this.state = state; }
 }

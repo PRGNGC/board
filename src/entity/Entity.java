@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.UUID;
+
 public interface Entity {
-    public int getId();
+    public UUID getId();
 }

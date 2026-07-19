@@ -1,23 +1,25 @@
-package request;
+package response;
 
 import shared.AdCategoryEnum;
 import shared.Price;
 import java.util.UUID;
 
-public class CreateAdRequest {
-    private UUID authorId;
+public class ToggleAdResponse {
+    private UUID id;
     private String title;
     private String description;
-    private Price price;
     private AdCategoryEnum category;
+    private Price price;
 
-    public CreateAdRequest() {}
+    public ToggleAdResponse(){}
 
-    public UUID getAuthorId(){
-        return this.authorId;
+    public UUID getId(){
+        return this.id;
     }
 
-    public void setAuthorId(UUID authorId){ this.authorId = authorId; }
+    public void setId(UUID id){
+        this.id = id;
+    }
 
     public AdCategoryEnum getCategory(){
         return this.category;

@@ -9,7 +9,12 @@ public enum AppModesEnum {
     LIST_OUTPUT("5"),
     EXIT("ex");
 
+
     private final String value;
+
+    public String getText() {
+        return this.value;
+    }
 
     AppModesEnum(String value) {
         this.value = value;
@@ -24,5 +29,4 @@ public enum AppModesEnum {
 
         return UNKNOWN;
     }
-
 }

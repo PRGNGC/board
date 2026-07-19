@@ -1,8 +1,6 @@
-import facade.ApplicationFacade;
-import service.AdvertisementService;
+import facade.*;
 
 void main() {
-    AdvertisementService adService = new AdvertisementService();
-    ApplicationFacade a = new ApplicationFacade(adService);
+    ApplicationFacade a = new ApplicationFacade();
     a.appLaunch();
 }
