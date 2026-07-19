@@ -1,0 +1,2 @@
+id:aad15058-2aff-46d3-9955-309d4118d78c; name:admin; login:admin; role:Админ; state:Активный;
+id:aad15058-2aff-46d3-9955-309d4118d78c; name:art; login:123; role:Пользователь; state:Активный; 

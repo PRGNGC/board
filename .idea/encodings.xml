@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="windows-1251">
+    <file url="file://$PROJECT_DIR$/src/Main.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/facade/ApplicationFacade.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/repository/UserRepository.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/service/AdvertisementService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/service/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/shared/AdCategoryEnum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/shared/AdStateEnum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/shared/AdminModesEnum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/shared/AppModesEnum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/shared/InitialAppModesEnum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/shared/SaveMethodsEnum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/shared/TextPriceEnum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/shared/UserRoleEnum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/shared/UserStateEnum.java" charset="UTF-8" />
+    <file url="PROJECT" charset="windows-1251" />
+  </component>
+</project>
