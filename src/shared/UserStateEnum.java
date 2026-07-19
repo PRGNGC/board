@@ -1,8 +1,8 @@
 package shared;
 
 public enum UserStateEnum {
-    ACTIVE("Активный"),
-    IDLE("Не активный"),
+    ACTIVE("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"),
+    IDLE("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"),
     NULL("null");
 
     private final String value;
