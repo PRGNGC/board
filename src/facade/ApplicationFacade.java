@@ -289,7 +289,6 @@ public class ApplicationFacade {
     }
 
     public void searchAdvertisement(){
-        IO.println("Поиск объявления...");
 //        создание запроса для поиска сообщения
         SearchAdRequest searchAd = new SearchAdRequest();
 
